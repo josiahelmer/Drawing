@@ -18,7 +18,7 @@ public class DrawingFrame extends JFrame
 	
 	private void setupFrame()
 	{
-		this.setContentPanel(basePanel);
+		this.setContentPane(basePanel);
 		this.setTitle("Drawing stuff in Java");
 		this.setSize(800,800);
 		this.setVisible(true);

@@ -1,9 +1,12 @@
 package drawing.view;
 
 import javax.swing.*;
+
 import drawing.controller.*;
+
 import java.awt.event.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class DrawingPanel extends JPanel
 {
@@ -11,6 +14,7 @@ public class DrawingPanel extends JPanel
 	private ShapePanel shapePanel;
 	private JButton addRectangleButton;
 	private SpringLayout baseLayout;
+	private ArrayList rectangleList;
 	
 	public DrawingPanel(DrawingController baseController)
 	{
@@ -39,7 +43,7 @@ public class DrawingPanel extends JPanel
 	}
 	private void setupListeners()
 	{
-		addRectangleButton.addActionListneer(new ActionListener()
+		addRectangleButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
@@ -70,6 +74,9 @@ public class DrawingPanel extends JPanel
 			int red = (int) (Math.random() * 256);
 			int green = (int) (Math.random() * 256);
 			int blue = (int) (Math.random() * 256);
+			
+			mainGraphics.setColor(new Color(red, green, blue));
+			mainGraphics.fill(current);
 		}
 	}
 }

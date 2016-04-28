@@ -28,9 +28,30 @@ public class ShapePanel extends JPanel
 		
 	}
 	
+	public void addCircle()
+	{
+		
+	}
+	public void addTriangle()
+	{
+		int [] xPoints = new int[3];
+		xPoints[0] = (int)(Math.random() * 150);
+		xPoints[1] = (int)(Math.random() * 150);
+		xPoints[2] = (int)(Math.random() * 150);
+		
+		int [] yPoints = {(int)(Math.random() * 250), (int)(Math.random() * 450), (int)(Math.random() * 250)};
+		
+		Polygon triangle = new Polygon(xPoints, yPoints, 3);
+		triangleList.add(triangle);
+	}
+	public void addPolygon()
+	{
+		
+	}
 	@Override
 	protected void paintComponent(Graphics currentGraphics)
 	{
 		super.paintComponent(currentGraphics);
+		Graphics2D mainGraphics = (Graphics2D) currentGraphics;
 	}
 }
