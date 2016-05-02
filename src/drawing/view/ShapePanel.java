@@ -35,7 +35,12 @@ public class ShapePanel extends JPanel
 	}
 	public void addEllipse()
 	{
+		int xPosition = (int)(Math.random() * 1500);
+		int yPosition = (int)(Math.random() * 1000);
+		int width = (int)(Math.random() * 2000);
+		int height = (int)(Math.random() * 1000);
 		
+		Ellipse2D currentEllipse = new Ellipse2D.Double(xPosition, yPosition, width, height);
 	}
 	public void addCircle()
 	{
@@ -55,7 +60,7 @@ public class ShapePanel extends JPanel
 	}
 	public void addPolygon()
 	{
-		
+	
 	}
 	@Override
 	protected void paintComponent(Graphics currentGraphics)
@@ -66,11 +71,16 @@ public class ShapePanel extends JPanel
 		for(Polygon currentTriangle: triangleList)
 		{
 			int red = (int)(Math.random() * 256);
-			int greeen = (int)(Math.random() * 256);
+			int green = (int)(Math.random() * 256);
 			int blue = (int)(Math.random() * 256);
 			
 			int penSize = (int)(Math.random() * 10) + 3;
 			mainGraphics.setColor(new Color(red,green,blue));
 		}
+	}
+	
+	public void clear()
+	{
+		
 	}
 }
