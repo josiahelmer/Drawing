@@ -1,9 +1,7 @@
 package drawing.view;
 
 import javax.swing.*;
-
 import drawing.controller.*;
-
 import java.awt.event.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -15,6 +13,7 @@ public class DrawingPanel extends JPanel
 	private JButton addRectangleButton;
 	private SpringLayout baseLayout;
 	private ArrayList rectangleList;
+	public JButton clearButton;
 	
 	public DrawingPanel(DrawingController baseController)
 	{
@@ -33,8 +32,9 @@ public class DrawingPanel extends JPanel
 	{
 		this.setLayout(baseLayout);
 		this.setBackground(Color.DARK_GRAY);
-		this.add(addRectangleButton);
+		this.add(addRectangleButton); //add all the buttons
 		this.add(shapePanel);
+		this.add(clearButton);
 	}
 	
 	private void setupLayout()
@@ -57,6 +57,11 @@ public class DrawingPanel extends JPanel
 				repaint();
 			}
 		});
+		
+		clearButton.addActionListener(new ActionListener()
+		
+			
+		
 	}
 	
 	@Override

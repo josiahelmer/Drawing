@@ -9,16 +9,26 @@ import java.util.ArrayList;
 public class ShapePanel extends JPanel
 {
 	private ArrayList<Rectangle> rectangleList;
+	private ArrayList<Rectangle> squareList;
 	private ArrayList<Ellipse2D> ellipseList;
 	private ArrayList<Ellipse2D> circleList;
 	private ArrayList<Polygon> triangleList;
 	private ArrayList<Polygon> polygonList;
 	
+	public ShapePanel()
+	{
+		triangleList = new ArrayList<Polygon>();
+		polygonList = new ArrayList<Polygon>();
+		rectangleList = new ArrayList<Rectangle>();
+		squareList = new ArrayList<Rectangle>();
+		circleList = new ArrayList<Ellipse2D>();
+		ellipseList = new ArrayList<Ellipse2D>();
+	}
+	
 	public void addRectangle()
 	{
 		
 	}
-	
 	public void addSquare()
 	{
 		
@@ -27,7 +37,6 @@ public class ShapePanel extends JPanel
 	{
 		
 	}
-	
 	public void addCircle()
 	{
 		
@@ -53,5 +62,15 @@ public class ShapePanel extends JPanel
 	{
 		super.paintComponent(currentGraphics);
 		Graphics2D mainGraphics = (Graphics2D) currentGraphics;
+		
+		for(Polygon currentTriangle: triangleList)
+		{
+			int red = (int)(Math.random() * 256);
+			int greeen = (int)(Math.random() * 256);
+			int blue = (int)(Math.random() * 256);
+			
+			int penSize = (int)(Math.random() * 10) + 3;
+			mainGraphics.setColor(new Color(red,green,blue));
+		}
 	}
 }
