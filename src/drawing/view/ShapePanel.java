@@ -87,6 +87,20 @@ public class ShapePanel extends JPanel
 			
 			int penSize = (int)(Math.random() * 10) + 3;
 			mainGraphics.setColor(new Color(red,green,blue));
+			mainGraphics.setStroke(new BasicStroke(penSize));
+			
+			mainGraphics.draw(currentTriangle);
+		}
+		
+		for(Polygon current : polygonList)
+		{
+			int red = (int)(Math.random() * 256);
+			int green = (int)(Math.random() * 256);
+			int blue = (int)(Math.random() * 256);
+			
+			mainGraphics.setColor(new Color(red, green, blue));
+			
+			mainGraphics.fill(current);
 		}
 	}
 	
