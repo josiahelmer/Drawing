@@ -58,8 +58,19 @@ public class DrawingPanel extends JPanel
 			}
 		});
 		
-		clearButton.addActionListener(new ActionListener()
+		addPolygonButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				shapePanel.addPolygon();
+				repaint();
+			}
+		}
 		
+		clearButton.addActionListener(new ActionListener()
+		{
+			
+		}
 			
 		
 	}

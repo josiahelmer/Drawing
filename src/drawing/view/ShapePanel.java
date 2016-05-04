@@ -60,7 +60,18 @@ public class ShapePanel extends JPanel
 	}
 	public void addPolygon()
 	{
-	
+		int numberOfSides = (int)(Math.random() * 9) + 3;
+		int [] xPoints = new int [numberOfSides];
+		int [] yPoints = new int [numberOfSides];
+		
+		for(int side = 0; side < numberOfSides; side++)
+		{
+			xPoints[side] = (int)(Math.random() * 200);
+			yPoints[side] = (int)(Math.random() * 200);
+		}
+		
+		Polygon myPolygon = new Polygon(xPoints, yPoints, numberOfSides);
+		polygonList.add(myPolygon);
 	}
 	@Override
 	protected void paintComponent(Graphics currentGraphics)
